@@ -15,12 +15,16 @@ Tests for every method is included in this project.
 
 Tests are done with Junit Version 4.12.
 
-Running test with command:
+## Running Tests
+
+Compile application and run included junit tests
+
 $ mvn test
 
 ## Built with
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [IntelliJ](https://www.jetbrains.com/idea/) - IDE Tool
+* [Java](https://www.oracle.com/java/) - Java SDK Version 11
 
 ## Authors 
 * **Sebastian Persson** - [sebastianpersson](https://github.com/sebastianpersson)

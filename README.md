@@ -11,7 +11,8 @@ to know if personal number is valid or not.
 
 ## Tests
 
-This project includes tests for every method.
+Tests for every method is included in this project.
+
 Tests are done with Junit Version 4.12.
 
 ## Built with

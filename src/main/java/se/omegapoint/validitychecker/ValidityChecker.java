@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ValidityChecker {
 
-    public static boolean validityCheck(String input){
+    public boolean validityCheck(String input){
         FormatPersonalNumber format = new FormatPersonalNumber();
         input = format.formatPersonalNumber(input); // format input
         format.isNullOrEmpty(input); //check so input is not null after format

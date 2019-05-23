@@ -11,8 +11,8 @@ import static org.junit.Assert.*;
 public class ValidityCheckerTest {
 
 
-    private static final ValidityChecker valid = new ValidityChecker();
-    private static final FormatPersonalNumber format = new FormatPersonalNumber();
+    private final ValidityChecker valid = new ValidityChecker();
+    private final FormatPersonalNumber format = new FormatPersonalNumber();
 
     private List<Integer> list = Arrays.asList(1,9,7,8,0,2,0,2,2,3,8,9);
     private List<Character> list2 = Arrays.asList('A','B','C','1','2','3');

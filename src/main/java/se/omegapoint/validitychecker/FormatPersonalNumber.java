@@ -23,7 +23,7 @@ public class FormatPersonalNumber {
         return input; // returns string without dash
     }
 
-    protected static String trimPersonalNumber(String input){
+    protected String trimPersonalNumber(String input){
         StringBuilder trimmedInput = new StringBuilder(input); // creating StringBuilder variable so .replace function will work properly.
         trimmedInput.replace(0,2,""); // removing first 2 char in String
         return trimmedInput.toString(); // returning input as String

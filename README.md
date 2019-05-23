@@ -15,6 +15,9 @@ Tests for every method is included in this project.
 
 Tests are done with Junit Version 4.12.
 
+Running test with command:
+$ mvn test
+
 ## Built with
 * [Maven](https://maven.apache.org/) - Dependency Management
 * [IntelliJ](https://www.jetbrains.com/idea/) - IDE Tool

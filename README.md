@@ -12,11 +12,13 @@ to know if personal number is valid or not.
 ## Tests
 
 Tests for every method is included in this project.
+
 Tests are done with Junit Version 4.12.
 
 ## Running Tests
 
 Compile application and run included junit tests
+
 $ mvn test
 
 ## Built with

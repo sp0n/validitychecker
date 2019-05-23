@@ -1,19 +1,24 @@
 # validitychecker
 validity checker v.1
 
-#Project Title
+# Project Title
+Validity Checker
 
+## Description
+This project is a complete personal number validity verifier.
+It takes a String as an argument and then validates if a it is valid personal number.
+Examples of validations included as methods are if argument is nullOrEmpty, check correct length of argument,
+check if argument includes only numbers, and comparing results of personal number algorithm with last number in argument
+to know if personal number is valid or not.
 
-##Getting Started
+## Tests
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
-##Running the tests
-
-Explain how to run the automated tests for this system
+This project includes tests for every method.
+Tests are done with Junit Version 4.12.
 
 ## Built with
 * [Maven](https://maven.apache.org/) - Dependency Management
+* [IntelliJ](https://www.jetbrains.com/idea/) - IDE Tool
 
 ## Authors 
-* **Sebastian Persson** - *Initial work* - [sebastianpersson](https://github.com/sebastianpersson)
+* **Sebastian Persson** - [sebastianpersson](https://github.com/sebastianpersson)

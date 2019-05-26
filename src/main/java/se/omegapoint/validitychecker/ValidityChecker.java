@@ -6,29 +6,26 @@ import java.util.List;
 
 public class ValidityChecker {
 
+
     public boolean validityCheck(String input){
         FormatPersonalNumber format = new FormatPersonalNumber();
         input = format.formatPersonalNumber(input); // format input
         format.isNullOrEmpty(input); //check so input is not null after format
-        return compareLastNumWithAlgorithm(input);  // format and validates input, calculate algorithm, compare result, return true if a valid number sequence.
+        if (compareLastNumWithAlgorithm(input)) return true; // format and validates input, calculate algorithm, compare result, return true if a valid number sequence.
+        return false;
     }
 
     protected static List<Integer> addStringToIntList(String input) {
         List<Integer> arrayList = new ArrayList<Integer>();
-        try{
+        try {
             for (int i = 0; i < input.length(); i++) {
                 arrayList.add(Character.digit(input.charAt(i), 10)); // adding input as Integers in List
-                if (arrayList.contains(-1)){ // if not a valid number between [0-10], return null.
-                    return null;
-                }
             }
-        } catch (ClassCastException e) {
+        } catch (NullPointerException e){
             e.printStackTrace();
-        }
+            }
         return arrayList; // return complete Integer array list.
     }
-
-
 
     protected static int calcAlgorithmPart1(int input){
         input *= 2; // multiply input by 2
@@ -59,7 +56,13 @@ public class ValidityChecker {
     private static boolean compareLastNumWithAlgorithm(String input){
         List<Integer> arrayList = addStringToIntList(input); //  String into Int List
         int sum = calcElementInIntList(arrayList); //calculate algorithm sum
-        int lastNum = arrayList.get(arrayList.size() - 1); //check last element in List
-        return lastNum == sum; // compare and return true or false
+
+        try {
+            int lastNum = arrayList.get(arrayList.size() - 1); //check last element in List
+            return lastNum == sum; // compare and return true or false
+        } catch (IndexOutOfBoundsException e){
+            e.printStackTrace();
+        }
+        return false;
     }
 }

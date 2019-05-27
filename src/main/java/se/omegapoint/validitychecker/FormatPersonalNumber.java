@@ -12,7 +12,7 @@ public class FormatPersonalNumber {
         } catch (IllegalArgumentException e) {
             throw e;
         }
-       return null; // if input is not valid return null
+        return null; // if input is not valid return null
     }
 
     protected String removeDashFromString(String input){
@@ -27,7 +27,6 @@ public class FormatPersonalNumber {
         trimmedInput.replace(0,2,""); // removing first 2 char in String
         return trimmedInput.toString(); // returning input as String
     }
-
 
     public boolean isNullOrEmpty(String input) {
         return input == null || input.trim().isEmpty(); // returns true if null or empty

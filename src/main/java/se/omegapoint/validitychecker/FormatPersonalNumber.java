@@ -5,14 +5,15 @@ public class FormatPersonalNumber {
 
     public String formatPersonalNumber(String input){
         try {
-            if (isNullOrEmpty(input)) return null; // check if input is null or empty
+            if (isNullOrEmpty(input))// check if input is null or empty
+                throw new NullPointerException(); // throw nullpointer exception
             if (input.contains("-")) input = removeDashFromString(input); // removes dash if dash exists in string
             if (input.length() == 12) input = trimPersonalNumber(input); // remove first two digits if length == 12
             if (input.length() == 10) return input;
+            else throw new IllegalArgumentException();
         } catch (IllegalArgumentException e) {
             throw e;
         }
-        return null; // if input is not valid return null
     }
 
     protected String removeDashFromString(String input){

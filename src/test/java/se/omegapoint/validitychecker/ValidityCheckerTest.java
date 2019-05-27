@@ -44,6 +44,20 @@ public class ValidityCheckerTest {
         assertEquals(0, ValidityChecker.calcAlgorithmPart2(30));
     }
 
+
+    @Test
+    public void calcElementInIntListTest() {
+        assertEquals(9, ValidityChecker.calcElementInIntList(validList1));
+        assertEquals(0, ValidityChecker.calcElementInIntList(validList2));
+    }
+
+    public void compareLastNumWithAlgorithmTest(){
+        assertEquals(9, valid.compareLastNumWithAlgorithm("7802022389"));
+        assertEquals(0, valid.compareLastNumWithAlgorithm("8204112380"));
+
+    }
+
+
     @Test
     public void inputValidityTest(){
         assertTrue(valid.validityCheck("7802022389"));

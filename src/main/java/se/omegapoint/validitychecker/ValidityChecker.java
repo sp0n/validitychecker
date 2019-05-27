@@ -1,7 +1,10 @@
 package se.omegapoint.validitychecker;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 
 public class ValidityChecker {
 
@@ -11,13 +14,10 @@ public class ValidityChecker {
         FormatPersonalNumber format = new FormatPersonalNumber();
         try{
             input = format.formatPersonalNumber(input); // format input
-            if(format.isNullOrEmpty(input)){ //check so input is not null after format
-                return false; // return false if input is null after format
-            }
             return compareLastNumWithAlgorithm(input); // format and validates input, calculate algorithm, compare result, return true if a valid number sequence.
         } catch (Exception e){
-            e.printStackTrace(); // print out exception stack trace
-            System.out.println("Invalid input: " + rawInput); // print out input data
+            Map<String, StackTraceElement[]> mapEx = new HashMap<>();
+            mapEx.put(rawInput, e.getStackTrace()); // saves invalid input linked together with exception in Map Collection.
             return false; // return false after Exception catches.
         }
     }
@@ -46,7 +46,7 @@ public class ValidityChecker {
         return input1;
     }
 
-    private static int calcElementInIntList(List<Integer> input) throws IndexOutOfBoundsException{
+    protected static int calcElementInIntList(List<Integer> input) throws IndexOutOfBoundsException{
         for (int i = 0; i < input.size() - 1; i += 2) {
             input.set(i, calcAlgorithmPart1(input.get(i))); //perform algorithm1 on every second element
         }
@@ -57,10 +57,12 @@ public class ValidityChecker {
         return calcAlgorithmPart2(sum); // returns value after performing algorithm2 method
     }
 
-    private static boolean compareLastNumWithAlgorithm(String input) throws IndexOutOfBoundsException {
+    protected static boolean compareLastNumWithAlgorithm(String input) throws IndexOutOfBoundsException {
         List<Integer> arrayList = addStringToIntList(input); //  String into Int List
         int sum = calcElementInIntList(arrayList); //calculate algorithm sum
         int lastNum = arrayList.get(arrayList.size() - 1); //check last element in List
-        return lastNum == sum; // compare and return true or false
+        if (lastNum == sum) {
+            return true;
+        } else throw new IllegalArgumentException();// compare and return true or false
     }
 }

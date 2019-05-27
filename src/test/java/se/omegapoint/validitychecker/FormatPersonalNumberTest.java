@@ -15,11 +15,6 @@ public class FormatPersonalNumberTest {
         assertEquals("7802022389",format.formatPersonalNumber("19780202238-9"));
         assertEquals("7802022389",format.formatPersonalNumber("19780202238--9"));
         assertEquals("7802022389",format.formatPersonalNumber("AB7802022389"));
-        assertEquals(null,format.formatPersonalNumber("1978020223899"));
-        assertEquals(null,format.formatPersonalNumber("197802029"));
-
-
-
 
 
     }

@@ -23,6 +23,7 @@ public class ValidityCheckerTest {
     @Test
     public void addStringInputToIntListTest() {
         assertEquals(list, ValidityChecker.addStringToIntList("197802022389"));
+        assertNotEquals(list, ValidityChecker.addStringToIntList("19780202238A"));
         assertNotEquals(list2, ValidityChecker.addStringToIntList("ABC123"));
 
     }
@@ -52,8 +53,8 @@ public class ValidityCheckerTest {
         assertTrue(valid.validityCheck("197-802022389"));
         assertFalse(valid.validityCheck("7-8020A22389"));
         assertFalse(valid.validityCheck("19780202-2388"));
-        //assertFalse(valid.validityCheck("78020A22389"));
-
+        assertFalse(valid.validityCheck("78020A22389"));
+        assertFalse(valid.validityCheck("7802022388"));
 
 
     }

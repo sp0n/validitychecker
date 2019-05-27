@@ -4,16 +4,15 @@ package se.omegapoint.validitychecker;
 public class FormatPersonalNumber {
 
     public String formatPersonalNumber(String input){
-
         try {
             if (isNullOrEmpty(input)) return null; // check if input is null or empty
             if (input.contains("-")) input = removeDashFromString(input); // removes dash if dash exists in string
             if (input.length() == 12) input = trimPersonalNumber(input); // remove first two digits if length == 12
-            if (input.length() == 10) return input; // check if length of string is 10 and then returns input
-        } catch (Exception e) {
-            e.printStackTrace();
+            if (input.length() == 10) return input;
+        } catch (IllegalArgumentException e) {
+            throw e;
         }
-        return null; // if input is not valid return null
+       return null; // if input is not valid return null
     }
 
     protected String removeDashFromString(String input){
